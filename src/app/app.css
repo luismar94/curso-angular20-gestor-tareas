@@ -40,32 +40,6 @@ ul {
   padding: 0;
 }
 
-li {
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  margin-bottom: 0.4rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-}
-
-li:hover {
-  background: #fafafa;
-}
-
-.hecha {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-.eliminar {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  margin-left: auto;
-}
-
 .limpiar {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -83,7 +57,7 @@ li:hover {
 }
 
 .vacio {
-  cursor: default;
+  padding: 0.6rem 0.75rem;
   color: #999;
   text-align: center;
 }

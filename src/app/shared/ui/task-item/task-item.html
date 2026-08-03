@@ -1,0 +1,7 @@
+<li (click)="toggled.emit(task().id)" [class.hecha]="task().completada">
+  {{ task().titulo }}
+  @if (task().completada) {
+    <span>✅</span>
+  }
+  <button class="eliminar" (click)="removed.emit(task().id); $event.stopPropagation()">🗑️</button>
+</li>

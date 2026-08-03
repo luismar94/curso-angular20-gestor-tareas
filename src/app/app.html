@@ -15,15 +15,13 @@
 
   <ul>
     @for (tarea of store.tareas(); track tarea.id) {
-      <li (click)="store.toggle(tarea.id)" [class.hecha]="tarea.completada">
-        {{ tarea.titulo }}
-        @if (tarea.completada) {
-          <span>✅</span>
-        }
-        <button class="eliminar" (click)="store.eliminar(tarea.id); $event.stopPropagation()">🗑️</button>
-      </li>
+      <app-task-item
+        [task]="tarea"
+        (toggled)="store.toggle($event)"
+        (removed)="store.eliminar($event)"
+      />
     } @empty {
-      <li>No hay tareas. Agrega una!!</li>
+      <li class="vacio">No hay tareas. Agrega una!!</li>
     }
   </ul>
 
