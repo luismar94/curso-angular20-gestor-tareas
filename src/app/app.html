@@ -2,16 +2,7 @@
   <h1>{{ title }}</h1>
   <p class="contador">Pendientes: {{ store.pendientes() }}</p>
 
-  <div class="nueva-tarea">
-    <input
-      type="text"
-      #inputTarea
-      placeholder="Nueva Tarea"
-      (keyup.enter)="store.agregar(inputTarea.value); inputTarea.value = ''"
-    />
-
-    <button (click)="store.agregar(inputTarea.value); inputTarea.value = ''">Agregar</button>
-  </div>
+  <app-task-form (agregado)="store.agregar($event)" />
 
   <ul>
     @for (tarea of store.tareas(); track tarea.id) {
