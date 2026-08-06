@@ -4,6 +4,16 @@
 
   <app-task-form (agregado)="store.agregar($event)" />
 
+  <button class="cargar" (click)="store.cargarEjemplos()">Cargar ejemplos de la API</button>
+
+  @if (store.cargando()) {
+    <p class="estado">Cargando tareas...</p>
+  }
+
+  @if (store.error()) {
+    <p class="estado error">{{ store.error() }}</p>
+  }
+
   <ul>
     @for (tarea of store.tareas(); track tarea.id) {
       <app-task-item
